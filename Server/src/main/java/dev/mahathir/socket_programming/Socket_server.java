@@ -1,8 +1,10 @@
 package dev.mahathir.socket_programming;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import service.Request;
-import service.Response;
+import protoClass.RequestOuterClass;
+import protoClass.ResponseOuterClass;
+//import service.Request;
+//import service.Response;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -24,15 +26,18 @@ public class Socket_server {
 				ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
 
 				// Received request from client
-				Request request = (Request) input.readObject();
+				byte[] requestBytes = (byte[]) input.readObject();
+				RequestOuterClass.Request request = RequestOuterClass.Request.parseFrom(requestBytes);
 				System.out.println("Received request: " + request);
 
 				// Process request and prepare response
 				double callRate = processRequest(request);
 
 				// Send response to client
-				Response response = new Response(callRate);
-				output.writeObject(response);
+				ResponseOuterClass.Response response = ResponseOuterClass.Response.newBuilder()
+						.setCallRate(callRate)
+						.build();
+				output.writeObject(response.toByteArray());
 
 				socket.close();
 			}
@@ -42,9 +47,8 @@ public class Socket_server {
 		}
 	}
 
-	private static double processRequest(Request request) {
+	private static double processRequest(RequestOuterClass.Request request) {
 		//based on the request calculation select the callRate
 		return 3.0;
-
 	}
 }
