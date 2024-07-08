@@ -1,8 +1,8 @@
 package dev.mahathir.socket_programming;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import protoClass.RequestOuterClass;
-import protoClass.ResponseOuterClass;
+import protoGeneratedClasses.RequestOuterClass;
+import protoGeneratedClasses.ResponseOuterClass;
 //import service.Request;
 //import service.Response;
 

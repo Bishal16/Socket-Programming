@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+message Request {
+  string callingNumber = 1;
+  string calledNumber = 2;
+  string callerIp = 3;
+  string callId = 4;
+}
