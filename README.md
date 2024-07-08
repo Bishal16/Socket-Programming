@@ -2,7 +2,7 @@ Protobuf Installation
 
 # Socket-Programming
 
-This project demonstrates a basic client-server communication using sockets and Protocol Buffers (protobuf) for serialization and deserialization. Here I use ProtoBuf for faster serialization and deserialization process instead conventional serializer.
+This project demonstrates a basic client-server communication using sockets and Protocol Buffers (protobuf) for serialization and deserialization. Here I use ProtoBuf for faster serialization and deserialization process instead of conventional serializer.
 
 ## Installing Protocol Buffers
 
