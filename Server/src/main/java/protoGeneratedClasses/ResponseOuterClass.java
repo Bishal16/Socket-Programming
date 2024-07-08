@@ -129,7 +129,7 @@ public final class ResponseOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (java.lang.Double.doubleToRawLongBits(callRate_) != 0) {
+      if (callRate_ != 0D) {
         output.writeDouble(1, callRate_);
       }
       unknownFields.writeTo(output);
@@ -141,7 +141,7 @@ public final class ResponseOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (java.lang.Double.doubleToRawLongBits(callRate_) != 0) {
+      if (callRate_ != 0D) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(1, callRate_);
       }

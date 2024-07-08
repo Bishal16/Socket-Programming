@@ -67,7 +67,7 @@
 					<pluginId>grpc-java</pluginId>
 					<pluginArtifact>io.grpc:protoc-gen-grpc-java:1.43.1:exe:linux-x86_64</pluginArtifact>
 					<!-- Adjust output directory as needed -->
-					<outputDirectory>${basedir}/src/main/java/protoClass</outputDirectory>
+					<outputDirectory>${basedir}/src/main/java/protoGeneratedClasses</outputDirectory>
 					<clearOutputDirectory>false</clearOutputDirectory>
 				</configuration>
 				<executions>

@@ -4,8 +4,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import protoGeneratedClasses.RequestOuterClass;
 import protoGeneratedClasses.ResponseOuterClass;
 
-
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -27,7 +28,7 @@ public class Socket_client {
 					.setCallId("11211747424468")
 					.build();
 			output.writeObject(request.toByteArray());
-			System.out.println("Sent request: " + request);
+			System.out.println("Sent request: \n\n" + request);
 
 			// Received response from server
 			byte[] responseBytes = (byte[]) input.readObject();
